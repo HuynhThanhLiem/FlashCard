@@ -1,0 +1,445 @@
+:root {
+    --primary: #EFBBCF;
+    --secondary: #8675A9;
+    --dark: #212121;
+    --light:#F3F3F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: montserrat, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: #434750;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.main__card {
+    text-align: center;
+}
+
+.main__boxes {
+    width: 100%;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content:right;
+    align-items:center;
+    min-height: 90vh;
+    font-size: 32px;
+}
+
+.box ul {
+    position: relative;
+    transform: skewY(-15deg);
+}
+
+.box ul li {
+    position: relative;
+    list-style: none;
+    width: 200px;
+    background: #3e3f46;
+    padding: 30px;
+    z-index: var(--i);
+    transition: 0.5s;
+}
+
+.box ul li:hover {
+    background: #33a3ee;
+    transform: translateX(-50px);
+}
+
+.box ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: 80px;
+    height: 100%;
+    background: #2e3133;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+
+.box ul li:hover::before{
+    background: #1f5378;
+}
+
+.box ul li::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #35383e;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+
+.box ul li:hover::after {
+    background: #2982b9;
+}
+
+.box ul li a {
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.card {
+    margin: 100px auto 0;
+    width: 400px;
+    height: 650px;
+    perspective: 1000px;
+}
+
+.card__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__face--front h2 {
+    color: #FFF;
+    font-size: 32px;
+}
+
+.card__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+}
+
+.card__header {
+    position: relative;
+    padding: 10px 20px 30px;
+}
+
+.card__header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 40% 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+}
+
+.card__illustration-photo {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 5px solid #FFF;
+    object-fit: cover;
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+}
+
+.card__illustration-photo:hover {
+    transform : scale(1.25);
+    -moz-transform : scale(1.25);
+    -webkit-transform : scale(1.25);
+    -o-transform : scale(1.25);
+    -ms-transform : scale(1.25);
+}
+
+.card__header h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card__body {
+    text-align: left;
+    padding: 15px 30px;
+}
+
+.card__body h3 {
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0;
+    position: relative;
+}
+
+.card__body h3::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60%;
+    height: 20px;
+    background: var(--primary);
+    z-index: -1;
+    opacity: 1;
+    transform: translate3d(50px, 0, 0);
+    transition: 0.5s all ease-in-out;
+}
+
+.card__body h3:hover::before {
+    width: 40%;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.card__word-form {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.card__header-top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.card__audio {
+    margin: 15px 0 0;
+    font-size: 24px;
+    text-align: left;
+    color: #FFF;
+}
+
+.card__audio i:hover {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 1.25 );
+  }
+  40%
+  {
+    transform: scale( 1 );
+  }
+  60%
+  {
+    transform: scale( 1.25 );
+  }
+  80%
+  {
+    transform: scale( 1 );
+  }
+  100%
+  {
+    transform: scale( 1 );
+  }
+}
+
+.card__synonyms, .card__antonyms {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 60px;
+    padding: 10px 0;
+}
+
+.line {
+    background-color: var(--primary);
+    height: 60px;
+    width: 5px;
+    opacity: 1;
+}
+
+.card__check {
+    justify-self: right;
+    margin: 10px 10px 0 0;
+    color: #fff;
+}
+
+#_checkbox {
+    display: none;
+}
+
+.card__check label {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    left: 75%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #d00;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: 0 7px 10px #ffbeb8;
+    cursor: pointer;
+    transition: 0.2 ease transform, 0.2s ease background-color, 0.2s ease box-shadow;
+    overflow: hidden;
+}
+
+.card__check label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    background-color: #FFF;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: inset 0 7px 10px #ffbeb8;
+    transition: 0.2 ease width, 0.2s ease height;
+}
+
+.card__check label:hover::before {
+    width: 28px;
+    height: 28px;
+    box-shadow: inset 0 7px 10px #ffbeb8;
+}
+
+.card__check label:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+#tick_mark {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    transform: rotateZ(-40deg);
+}
+
+#tick_mark::before, #tick_mark::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.2s ease transform, 0.2s ease opacity;
+}
+
+#tick_mark::before {
+    left: 0;
+    bottom: 0;
+    width: 17%;
+    height: 50%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+    transform: translateY(-34px);
+}
+
+#tick_mark::after {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+    transform: translateX(39px);
+}
+
+/* .card__check .wrapper {
+    justify-content:center;
+    align-items:center;
+}
+
+.card__check .checkmark {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.card__check .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.card__check .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #7ac142
+    }
+} */
