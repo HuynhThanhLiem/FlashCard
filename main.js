@@ -1,15 +1,10 @@
-const card = document.querySelector('.card__inner');
-const myAudio = document.getElementById('my-audio');
-const playBtn = document.getElementById('play');
-const cardAttributes = document.getElementsByClassName('card__attributes')
+$(document).ready(function() {
+    $('#card-1 .card__inner').on('click', function() {
+        $(this).toggleClass('is-flipped');
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
-    card.addEventListener('click', function () {
-        card.classList.toggle('is-flipped');
-    })
-    
-    playBtn.addEventListener('click', function (e) {
+    $('#play').on('click', function(e) {
         e.stopPropagation();
-        myAudio.play();
-    })
-});
+        $('#my-audio').play();
+    });
+})

@@ -7,12 +7,12 @@
     <title>Card</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
     <div class="main">
         <div class="main__card">
-            
-            <div class="card">
+            <div class="card" id="card-1">
                 <div class="card__inner">
                     <div class="card__face card__face--front">
                         <h2>Destiny</h2>
@@ -31,15 +31,6 @@
                                         <label for="_checkbox">
                                             <div id="tick_mark"></div>
                                         </label>
-
-                                        <!-- <div class="wrapper">
-                                            <div>
-                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                                                </svg>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <img class="card__illustration-photo" src="real-love.png" alt="A real love couple" />
@@ -71,11 +62,71 @@
                         </div>
                     </div>
                 </div>
+                <div class="main__button">
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <p class="menu">Menu</p>
+                        <p class="skip">Skip</p>
+                    </div>
+                </div>
             </div>
 
+            <div class="card" id="card-2" hidden>
+                <div class="card__inner">
+                    <div class="card__face card__face--front">
+                        <h2>Destiny</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+
+                            <div class="card__header">
+                                <div class="card__header-top">
+                                    <div class="card__audio">
+                                        <audio id="my-audio" src="destiny.mp3" type="audio/mp3"></audio>
+                                        <i id="play" class="fa-solid fa-volume-high"></i>
+                                    </div>
+                                    <div class="card__check">
+                                        <input type="checkbox" id="_checkbox">
+                                        <label for="_checkbox">
+                                            <div id="tick_mark"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <img class="card__illustration-photo" src="real-love.png" alt="A real love couple" />
+                                <h2>Destiny</h2>
+                                <p>/ˈdes.tɪ.ni/</p>
+                            </div>
+                            
+                            <div class="card__body">
+                                <p class="card__word-form">Noun</p>
+                                <p class="card__example">Until now, I thought I was into mature men, so I overlooked my true destiny.</p>
+                                
+                                <h3 class="card__attributes">Synonyms</h3>
+                                <div class="card__synonyms">
+                                    <div class="line"></div>
+                                    <div>
+                                        <p>Fate, fortune, karma, providence, predestination, serendipity, doom, lot, chance, circumstance</p>
+                                    </div>
+                                </div>
+
+                                <h3 class="card__attributes">Antonyms</h3>
+                                <div class="card__antonyms">
+                                    <div class="line"></div>
+                                    <div>
+                                        <p>Free will, choice, volition, decision, control, agency, independence, self-determination, liberty, autonomy</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="main__boxes">
+        <!-- <div class="main__boxes">
             <div class="box">
                 <ul>
                     <li style="--i:5;"><a href="#">First</a></li>
@@ -85,7 +136,7 @@
                     <li style="--i:1;"><a href="#">Fifth</a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
     
 
