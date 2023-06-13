@@ -23,7 +23,7 @@ body {
 }
 
 .main__card {
-    margin-left: 100px;
+    margin-left: 200px;
     text-align: center;
     display: flex;
 }
@@ -308,6 +308,7 @@ body {
     justify-self: right;
     margin: 10px 10px 0 0;
     color: #fff;
+    display: none;
 }
 
 #_checkbox {
@@ -475,4 +476,50 @@ body {
 .main__button .menu-icon:hover p.skip {
     transform: rotateY(0deg);
     opacity: 1;
+}
+
+/*swap card*/
+#card-2 {
+    animation: backcard-back;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: .5;
+    z-index: 1;
+}
+
+#card-2.active {
+    animation-name: backcard-front;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+/* #card-1 {
+    animation: frontcard-front;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+#card-1.active {
+    animation-name: frontcard-back;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+} */
+
+@keyframes backcard-front {
+    0% {
+        transform: perspective(200px) translate3d(-100px, 0px, -30px);
+        opacity: .5;
+    }
+
+    50% {
+        transform: perspective(200px) translate3d(-200px, 0px, -30px);
+    }
+
+    100% {
+        transform: perspective(200px) translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
 }
