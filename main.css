@@ -34,7 +34,7 @@ body {
 
 .main__boxes {
     width: 100%;
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     display: flex;
     justify-content:right;
     align-items:center;
@@ -106,7 +106,7 @@ body {
 }
 
 .card {
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     width: 400px;
     height: 650px;
     perspective: 1000px;
@@ -429,6 +429,7 @@ body {
 }
 
 .main__button .menu-icon span {
+    cursor: pointer;
     width: 32px;
     height: 4px;
     background-color: #fff;
