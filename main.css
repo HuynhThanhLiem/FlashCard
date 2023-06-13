@@ -28,10 +28,6 @@ body {
     display: flex;
 }
 
-#card-1, #card-2 {
-    position: absolute;
-}
-
 .main__boxes {
     width: 100%;
     margin: 50px auto 0;
@@ -479,34 +475,24 @@ body {
 }
 
 /*swap card*/
-#card-2 {
+.card.card-selected, .card.card-after {
+    position: absolute;
+}
+
+.card.card-after {
     animation: backcard-back;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     opacity: .5;
-    z-index: 1;
+    z-index: -1;
 }
 
-#card-2.active {
+.card.card-after.active {
     animation-name: backcard-front;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     z-index: 2;
 }
-
-/* #card-1 {
-    animation: frontcard-front;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    z-index: 2;
-}
-
-#card-1.active {
-    animation-name: frontcard-back;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    z-index: 1;
-} */
 
 @keyframes backcard-front {
     0% {
